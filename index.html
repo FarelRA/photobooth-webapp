@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+    }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Landing Page -->
+        <div id="landing-page" class="page">
+            <md-outlined-card class="content-card">
+                <h1>Photobooth</h1>
+                <p>Capture three photos to create your photostrip.</p>
+                <md-filled-button id="start-btn">
+                    <md-icon slot="icon">camera_alt</md-icon>
+                    Start
+                </md-filled-button>
+            </md-outlined-card>
+        </div>
+
+        <!-- Photobooth Page -->
+        <div id="photobooth-page" class="page hidden">
+            <div class="photobooth-layout">
+                <div class="left-section">
+                    <div class="thumbnails">
+                        <div class="thumbnail-container" data-slot="0">
+                            <img id="slot-1" src="Slot 1.png" alt="Photo slot 1" class="thumbnail">
+                            <div class="thumbnail-overlay">
+                                <span class="material-symbols-outlined">refresh</span>
+                                <span>Retake</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail-container" data-slot="1">
+                            <img id="slot-2" src="Slot 2.png" alt="Photo slot 2" class="thumbnail">
+                            <div class="thumbnail-overlay">
+                                <span class="material-symbols-outlined">refresh</span>
+                                <span>Retake</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail-container" data-slot="2">
+                            <img id="slot-3" src="Slot 3.png" alt="Photo slot 3" class="thumbnail">
+                            <div class="thumbnail-overlay">
+                                <span class="material-symbols-outlined">refresh</span>
+                                <span>Retake</span>
+                            </div>
+                        </div>
+                    </div>
+                    <md-filled-tonal-button id="capture-btn">
+                        <md-icon slot="icon">camera</md-icon>
+                        Take Picture
+                    </md-filled-tonal-button>
+                </div>
+
+                <div class="camera-section">
+                    <div class="camera-container">
+                        <video id="video-feed" autoplay playsinline muted></video>
+                        <div id="countdown-overlay" class="countdown"></div>
+                        <canvas id="capture-canvas" class="hidden"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Page -->
+        <div id="result-page" class="page hidden">
+            <md-outlined-card class="content-card">
+                <h2>Your Photostrip</h2>
+                <div class="final-image-container">
+                    <img id="final-image" src="" alt="Final photostrip">
+                    <canvas id="composite-canvas" class="hidden"></canvas>
+                </div>
+                <div class="action-bar">
+                    <md-filled-button id="print-btn">
+                        <md-icon slot="icon">print</md-icon>
+                        Print
+                    </md-filled-button>
+                    <md-outlined-button id="download-btn">
+                        <md-icon slot="icon">download</md-icon>
+                        Download
+                    </md-outlined-button>
+                    <md-outlined-button id="restart-btn">
+                        <md-icon slot="icon">refresh</md-icon>
+                        Start Over
+                    </md-outlined-button>
+                </div>
+            </md-outlined-card>
+        </div>
+
+        <!-- Error Dialog -->
+        <div id="error-dialog" class="dialog hidden">
+            <div class="dialog-content">
+                <h3>Error</h3>
+                <p id="error-message"></p>
+                <md-filled-button id="error-close-btn">Close</md-filled-button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
