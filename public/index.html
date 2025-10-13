@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photobooth</title>
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Material Web Components -->
     <script type="importmap">
     {
         "imports": {
@@ -19,7 +25,8 @@
 </head>
 <body>
     <div class="container">
-        <!-- Landing Page -->
+        
+        <!-- ==================== LANDING PAGE ==================== -->
         <div id="landing-page" class="page">
             <md-outlined-card class="content-card">
                 <h1>Photobooth</h1>
@@ -31,9 +38,11 @@
             </md-outlined-card>
         </div>
 
-        <!-- Photobooth Page -->
+        <!-- ==================== PHOTOBOOTH PAGE ==================== -->
         <div id="photobooth-page" class="page hidden">
             <div class="photobooth-layout">
+                
+                <!-- Left Section: Thumbnails & Capture Button -->
                 <div class="left-section">
                     <div class="thumbnails">
                         <div class="thumbnail-container" data-slot="0">
@@ -64,6 +73,7 @@
                     </md-filled-tonal-button>
                 </div>
 
+                <!-- Right Section: Camera Feed -->
                 <div class="camera-section">
                     <div class="camera-container">
                         <video id="video-feed" autoplay playsinline muted></video>
@@ -71,35 +81,53 @@
                         <canvas id="capture-canvas" class="hidden"></canvas>
                     </div>
                 </div>
+                
             </div>
         </div>
 
-        <!-- Result Page -->
+        <!-- ==================== RESULT PAGE ==================== -->
         <div id="result-page" class="page hidden">
-            <md-outlined-card class="content-card">
-                <h2>Your Photostrip</h2>
-                <div class="final-image-container">
-                    <img id="final-image" src="" alt="Final photostrip">
-                    <canvas id="composite-canvas" class="hidden"></canvas>
+            <md-outlined-card class="content-card result-layout">
+                
+                <!-- Left Column: Final Image -->
+                <div class="result-left">
+                    <div class="final-image-container">
+                        <img id="final-image" src="" alt="Final photostrip">
+                        <canvas id="composite-canvas" class="hidden"></canvas>
+                    </div>
                 </div>
-                <div class="action-bar">
-                    <md-filled-button id="print-btn">
-                        <md-icon slot="icon">print</md-icon>
-                        Print
-                    </md-filled-button>
-                    <md-outlined-button id="download-btn">
-                        <md-icon slot="icon">download</md-icon>
-                        Download
-                    </md-outlined-button>
-                    <md-outlined-button id="restart-btn">
-                        <md-icon slot="icon">refresh</md-icon>
-                        Start Over
-                    </md-outlined-button>
+                
+                <!-- Right Column: QR Code & Actions -->
+                <div class="result-right">
+                    <!-- QR Code Section -->
+                    <div id="qr-container" class="qr-section">
+                        <md-circular-progress id="qr-loading" indeterminate></md-circular-progress>
+                        <div id="qr-frame" class="qr-frame hidden">
+                            <img id="qr-code" src="" alt="QR Code">
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-bar">
+                        <md-filled-button id="print-btn">
+                            <md-icon slot="icon">print</md-icon>
+                            Print
+                        </md-filled-button>
+                        <md-outlined-button id="download-btn">
+                            <md-icon slot="icon">download</md-icon>
+                            Download
+                        </md-outlined-button>
+                        <md-outlined-button id="restart-btn">
+                            <md-icon slot="icon">refresh</md-icon>
+                            Start Over
+                        </md-outlined-button>
+                    </div>
                 </div>
+                
             </md-outlined-card>
         </div>
 
-        <!-- Error Dialog -->
+        <!-- ==================== ERROR DIALOG ==================== -->
         <div id="error-dialog" class="dialog hidden">
             <div class="dialog-content">
                 <h3>Error</h3>
@@ -107,9 +135,10 @@
                 <md-filled-button id="error-close-btn">Close</md-filled-button>
             </div>
         </div>
+        
     </div>
 
-
-    <script src="script.js"></script>
+    <!-- Application Script -->
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

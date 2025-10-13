@@ -1,0 +1,48 @@
+/* Responsive breakpoints */
+
+@media (max-width: 768px) {
+    .photobooth-layout {
+        flex-direction: column;
+    }
+
+    .left-section {
+        width: 100%;
+        order: 2;
+    }
+
+    .thumbnails {
+        flex-direction: row;
+    }
+
+    .thumbnail-container {
+        width: calc(33.333% - 11px);
+    }
+
+    .camera-section {
+        order: 1;
+    }
+
+    .result-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .content-card {
+        padding: 16px;
+    }
+
+    .action-bar {
+        flex-direction: column;
+    }
+
+    .action-bar md-filled-button,
+    .action-bar md-outlined-button,
+    .action-bar md-filled-tonal-button {
+        width: 100%;
+    }
+}

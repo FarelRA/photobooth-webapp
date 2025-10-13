@@ -1,0 +1,19 @@
+/* Page-specific styles */
+
+/* Landing Page */
+#landing-page .content-card {
+    padding: 48px 32px;
+}
+
+/* Result Page */
+.final-image-container {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--outline);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#final-image {
+    width: 100%;
+    display: block;
+}

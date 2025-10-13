@@ -1,0 +1,21 @@
+{
+  "name": "photobooth-webapp",
+  "version": "1.0.0",
+  "description": "Photobooth web application with upload and QR code generation",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "keywords": ["photobooth", "qr-code", "upload"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

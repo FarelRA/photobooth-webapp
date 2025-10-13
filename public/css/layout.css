@@ -1,0 +1,88 @@
+/* Layout structures */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.content-card {
+    padding: 48px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Photobooth Layout */
+.photobooth-layout {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.camera-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+}
+
+/* Result Layout - Intentionally asymmetric (left larger) */
+.result-layout {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 3rem;
+}
+
+.result-left {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-left .final-image-container {
+    width: 100%;
+    max-width: 550px;
+}
+
+.result-left #final-image {
+    width: 100%;
+    height: auto;
+}
+
+.result-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 400px;
+}
