@@ -1,3 +1,5 @@
+> **Status:** Archived — no longer maintained, kept for reference.
+
 # Photobooth Application
 
 A production-ready photobooth web application with automatic image upload and QR code generation.
